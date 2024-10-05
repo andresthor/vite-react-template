@@ -5,7 +5,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>React + TypeScript + Vite Template</h1>
-        <p>Edit <code>src/App.tsx</code> and save to test HMR</p>
+        <p>A simple template that you can find at <a href="https://www.github.com/andresthor/vite-react-template">andresthor/vite-react-template</a></p>
       </header>
     </div>
   );
