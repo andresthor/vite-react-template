@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Post, User } from '../types';
+import { Comment, Post, User } from '../types';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
@@ -57,6 +57,25 @@ export const fetchPostsByUser = async (userId: number): Promise<Post[]> => {
     return response.data;
   } catch (error) {
     console.error(`Error in fetchPostsByUser for userId ${userId}:`, error);
+    throw error;
+  }
+};
+
+export const fetchCommentsByPostId = async (
+  postId: number
+): Promise<Comment[]> => {
+  try {
+    const response = await axios.get(`${BASE_URL}/posts/${postId}/comments`);
+    if (response.status !== 200) {
+      console.error(`Error: Received status ${response.status}`);
+      throw new Error("Failed to fetch comments");
+    }
+    return response.data;
+  } catch (error) {
+    console.error(
+      `Error in fetchCommentsByPostId for postId ${postId}:`,
+      error
+    );
     throw error;
   }
 };
