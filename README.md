@@ -65,8 +65,14 @@ The template included very little styling, and instead of using a library (since
 
 We can then style as we go and do an overhaul when we are closer to finished.
 
-### Fetch data
+### Fetch posts data
 
 - Let's create the first fetcher, `fetchPosts`, using `axios` and place it in `api/fetchers.ts`.
 - We'll call the fetcher in the body of the `<PostsGrid />` component, using `tanstack-query`.
 - We confirm data is being fetched via `console.log`. Everything seems to be okay!
+
+### Fill `PostsGrid` component with data
+
+- Decided on grid layout so ~`PostsList`~ -> `PostsGrid`
+- Created `PostCard` component for the tiled layout
+
