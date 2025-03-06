@@ -81,8 +81,17 @@ img {
 
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
 }
 
 /* Post Card */
