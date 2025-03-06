@@ -59,3 +59,8 @@ export const routes: RouteObject[] = [
   },
 ];
 ```
+### Basic styling
+
+The template included very little styling, and instead of using a library (since this is a small project) we can just copy in some basic `css variables` and start minimally styling the classes we have already created.
+
+We can then style as we go and do an overhaul when we are closer to finished.

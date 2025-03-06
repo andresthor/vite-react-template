@@ -55,6 +55,7 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-open-sans);
   font-size: var(--font-size-base);
+  font-synthesis-weight: none;
   line-height: 1.5;
 }
 
