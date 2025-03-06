@@ -1,12 +1,12 @@
-import { Comment } from "../types"
+import { Comment } from '../types';
 
 interface CommentListProps {
-  comments: Comment[]
+  comments: Comment[];
 }
 
 export function CommentList({ comments }: CommentListProps) {
   if (comments.length === 0) {
-    return <p>No comments yet. Be the first to comment!</p>
+    return <p>No comments yet. Be the first to comment!</p>;
   }
 
   return (
@@ -14,7 +14,7 @@ export function CommentList({ comments }: CommentListProps) {
       {comments.map((comment) => (
         <div key={comment.id} className="comment">
           <div className="avatar">
-            <img src={"/user.png"} alt={comment.name} className="avatar-image" />
+            <img src={'/user.png'} alt={comment.name} className="avatar-image" />
           </div>
           <div className="comment-content">
             <div className="comment-header">
@@ -25,7 +25,5 @@ export function CommentList({ comments }: CommentListProps) {
         </div>
       ))}
     </div>
-  )
+  );
 }
-
-

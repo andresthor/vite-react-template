@@ -1,4 +1,3 @@
-
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -7,5 +6,5 @@ export default function Footer() {
         <a href="https://github.com/andresthor">github.com/andresthor</a>
       </div>
     </footer>
-  )
+  );
 }

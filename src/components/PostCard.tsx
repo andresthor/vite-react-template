@@ -11,7 +11,7 @@ export default function PostCard({ post, user }: PostCardProps) {
   return (
     <article className="post-card">
       <div className="post-card-image-container">
-        <img src={"/placeholder.svg"} alt={post.title} className="post-card-image" />
+        <img src={'/placeholder.svg'} alt={post.title} className="post-card-image" />
       </div>
       <div className="post-card-content">
         <Link to={`/posts/${post.id}`}>
@@ -22,7 +22,11 @@ export default function PostCard({ post, user }: PostCardProps) {
       <div className="post-card-footer">
         <Link to={`/user/${post.userId}`} className="post-author">
           <div className="avatar">
-            <img src={'/placeholder.svg'} alt={user?.name || 'Unknown Author'} className="avatar-image" />
+            <img
+              src={'/placeholder.svg'}
+              alt={user?.name || 'Unknown Author'}
+              className="avatar-image"
+            />
           </div>
           <span className="post-author-name">{user?.name || 'Unknown Author'}</span>
         </Link>

@@ -61,21 +61,16 @@ export const fetchPostsByUser = async (userId: number): Promise<Post[]> => {
   }
 };
 
-export const fetchCommentsByPostId = async (
-  postId: number
-): Promise<Comment[]> => {
+export const fetchCommentsByPostId = async (postId: number): Promise<Comment[]> => {
   try {
     const response = await axios.get(`${BASE_URL}/posts/${postId}/comments`);
     if (response.status !== 200) {
       console.error(`Error: Received status ${response.status}`);
-      throw new Error("Failed to fetch comments");
+      throw new Error('Failed to fetch comments');
     }
     return response.data;
   } catch (error) {
-    console.error(
-      `Error in fetchCommentsByPostId for postId ${postId}:`,
-      error
-    );
+    console.error(`Error in fetchCommentsByPostId for postId ${postId}:`, error);
     throw error;
   }
 };
