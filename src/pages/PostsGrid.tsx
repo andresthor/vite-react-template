@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchPosts, fetchUsers } from '../api/fetchers';
+import { fetchPosts } from '../api/fetchers';
+import { useUserContext } from '../context/UserContext';
 import PostCard from '../components/PostCard';
 
 function PostsWrapper() {
@@ -17,6 +18,8 @@ function PostsWrapper() {
 }
 
 function PostsGrid() {
+  const { users = [], isLoading: usersLoading, error: usersError } = useUserContext();
+
   const {
     data: posts = [],
     error: postsError,
@@ -24,15 +27,6 @@ function PostsGrid() {
   } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
-  });
-
-  const {
-    data: users = [],
-    error: usersError,
-    isLoading: usersLoading,
-  } = useQuery({
-    queryKey: ['users'],
-    queryFn: fetchUsers,
   });
 
   if (postsLoading || usersLoading) {
