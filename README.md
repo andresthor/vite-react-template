@@ -1,5 +1,12 @@
 # Technical Test - Frontend Technical Lead
 
+## To run
+
+```bash
+$ npm install
+$ npm run dev
+```
+
 ## Task information
 
 As laid out in the e-mail I received.
@@ -89,3 +96,13 @@ We can then style as we go and do an overhaul when we are closer to finished.
 - Placing some placeholder images so the page doesn't look as barren
 - The user names and post titles are very long, so it doesn't look great. But doesn't _break_ the layout either.
 - Adding a `Home` and `About` in navbar in header
+
+## Wrap-up // Notes
+
+- Added an `/about` route with a simple message about the project.
+- Lots of things to improve
+  - Handling of errors and where to show them (no suspense)
+  - Same goes for loading screens
+  - Some duplication between pages and components
+  - css is very verbose, but not crazy. Ended up being more than expected.
+
