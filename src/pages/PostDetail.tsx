@@ -58,6 +58,9 @@ export default function PostDetail() {
         <h1>{post.title}</h1>
         <div className="post-meta">
           <Link to={`/user/${post.userId}`} className="post-author">
+            <div className="avatar avatar-large">
+              <img src={"/placeholder.svg"} alt={`${post.userId}`} className="avatar-image" />
+            </div>
             <div className="post-author-info">
               <div className="post-author-name">{user?.name || "Unknown Author"}</div>
               <div className="post-author-role">Author</div>
@@ -65,6 +68,8 @@ export default function PostDetail() {
           </Link>
         </div>
       </div>
+
+      <img src={"/placeholder.svg"} alt={post.title} className="post-cover-image" />
 
       <div className="post-content">
         {post.body}
