@@ -101,3 +101,38 @@ img {
   overflow: hidden;
   padding: 1rem;
 }
+
+.post-card-content {
+  padding: var(--space-6);
+}
+
+.post-card-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
+}
+
+.post-card-excerpt {
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.post-card-footer {
+  padding: 0 var(--space-6) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.post-author-name {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
