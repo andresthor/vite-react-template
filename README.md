@@ -75,4 +75,4 @@ We can then style as we go and do an overhaul when we are closer to finished.
 
 - Decided on grid layout so ~`PostsList`~ -> `PostsGrid`
 - Created `PostCard` component for the tiled layout
-
+- Added `fetchUsers` so that `User` information can be displayed on `PostCard`

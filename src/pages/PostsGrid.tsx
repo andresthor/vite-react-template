@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchPosts } from '../api/fetchers';
+import { fetchPosts, fetchUsers } from '../api/fetchers';
 import PostCard from '../components/PostCard';
 
 function PostsWrapper() {
@@ -19,19 +19,28 @@ function PostsWrapper() {
 function PostsGrid() {
   const {
     data: posts = [],
-    error,
-    isLoading,
+    error: postsError,
+    isLoading: postsLoading,
   } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
   });
 
-  if (isLoading) {
+  const {
+    data: users = [],
+    error: usersError,
+    isLoading: usersLoading,
+  } = useQuery({
+    queryKey: ['users'],
+    queryFn: fetchUsers,
+  });
+
+  if (postsLoading || usersLoading) {
     return <div>Loading posts...</div>;
   }
 
-  if (error) {
-    console.error('Error loading posts:', error);
+  if (postsError || usersError) {
+    console.error('Error loading data:', { postsError, usersError });
     return <div>Error loading posts. Please try again later.</div>;
   }
 
@@ -40,7 +49,11 @@ function PostsGrid() {
       <h2 className="section-title">Latest Posts</h2>
       <div className="posts-grid">
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard
+            key={post.id}
+            post={post}
+            user={users.find((user) => user.id === post.userId)}
+          />
         ))}
       </div>
     </>
