@@ -5,7 +5,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-container">
         <Link to="/" className="site-title">
-          All posts
+          RavenPack Test Blog
         </Link>
       </div>
     </header>

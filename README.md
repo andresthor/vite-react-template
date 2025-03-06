@@ -23,7 +23,39 @@ As laid out in the e-mail I received.
 I'm very familiar with the basic stack and I have a template with boilerplate for `vite + react + typescript`. This template also sets up some defaults for `eslint` and `prettier`.
 
 ```bash
-git clone https://github.com/andresthor/vite-react-typescript ravenpack-frontend-test
+$ git clone https://github.com/andresthor/vite-react-typescript ravenpack-frontend-test
 ```
 
 Let's replace the README.md with this file and make our first commit.
+
+### Rough sketch of solution
+
+Looking at the first two requirements, it's clear that we will have to render content from the following `JSONPlaceholder` endpoints: `/posts`, `/posts/:id`, `/posts/:id/comments`. We might also need the information about the users themselves `/users`.
+
+The final requirement, which is listing all posts from a user, is possible from `/users/:id/posts`. However, we can also avoid creating another route and simply call it as a nested resource `/posts?userId=1`.
+
+This means we should fetch some remaining packages for routing and fetching. To keep things simple, we can use `axios`, `tanstack query` (as mentioned in the intro) and `react-router`.
+
+```bash
+$ npm install @tanstack/react-query axios react-router-dom
+```
+
+To finish this step, we'll create the routes and some boilerplate components before we commit
+
+```react
+// src/routes/index.ts
+export const routes: RouteObject[] = [
+  {
+    path: "/",
+    element: <PostsList />,
+  },
+  {
+    path: "/posts/:id",
+    element: <PostDetail />,
+  },
+  {
+    path: "/user/:userId",
+    element: <UserPosts />,
+  },
+];
+```
