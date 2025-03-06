@@ -47,7 +47,7 @@ To finish this step, we'll create the routes and some boilerplate components bef
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <PostsList />,
+    element: <PostsGrid />,
   },
   {
     path: "/posts/:id",
@@ -68,5 +68,5 @@ We can then style as we go and do an overhaul when we are closer to finished.
 ### Fetch data
 
 - Let's create the first fetcher, `fetchPosts`, using `axios` and place it in `api/fetchers.ts`.
-- We'll call the fetcher in the body of the `<PostLists />` component, using `tanstack-query`.
+- We'll call the fetcher in the body of the `<PostsGrid />` component, using `tanstack-query`.
 - We confirm data is being fetched via `console.log`. Everything seems to be okay!

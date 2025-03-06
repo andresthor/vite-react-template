@@ -1,13 +1,13 @@
 import { RouteObject } from "react-router-dom";
 
-import PostsList from "../pages/PostsList";
+import PostsGrid from "../pages/PostsGrid";
 import PostDetail from "../pages/PostDetail";
 import UserPosts from "../pages/UserPosts";
 
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <PostsList />,
+    element: <PostsGrid />,
   },
   {
     path: "/posts/:id",
