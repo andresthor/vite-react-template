@@ -80,3 +80,4 @@ We can then style as we go and do an overhaul when we are closer to finished.
 ### Repeat for other two routes
 
 - The user data is needed on multiple routes -> lifting fetch/state to `UserContext`
+- `fetchPostsById`, `fetchPostsByUser` are very similar, but as mentioned above, we'll use the query params to fetch posts by `userId`

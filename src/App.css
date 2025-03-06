@@ -39,6 +39,10 @@ img {
   gap: var(--space-6);
 }
 
+.back-link {
+  margin: var(--space-4) 0;
+}
+
 .nav-link {
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -135,4 +139,10 @@ img {
 .post-author-name {
   font-size: var(--font-size-sm);
   font-weight: 500;
+}
+
+/* User Posts */
+
+.user-posts {
+  margin-top: var(--space-8);
 }
