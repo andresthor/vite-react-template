@@ -81,3 +81,11 @@ We can then style as we go and do an overhaul when we are closer to finished.
 
 - The user data is needed on multiple routes -> lifting fetch/state to `UserContext`
 - `fetchPostsById`, `fetchPostsByUser` are very similar, but as mentioned above, we'll use the query params to fetch posts by `userId`
+- A lot of copy/paste from first route, with minor styling changes
+- `fetchCommentsByPostId` was also added and the comments are rendered in a `<CommentList />` component.
+
+### Styling and placeholder images
+
+- Placing some placeholder images so the page doesn't look as barren
+- The user names and post titles are very long, so it doesn't look great. But doesn't _break_ the layout either.
+- Adding a `Home` and `About` in navbar in header
