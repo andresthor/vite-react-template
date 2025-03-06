@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchPosts } from '../api/fetchers';
+import PostCard from '../components/PostCard';
 
 function PostsWrapper() {
   return (
@@ -12,7 +13,7 @@ function PostsWrapper() {
         <PostsGrid />
       </section>
     </div>
-  )
+  );
 }
 
 function PostsGrid() {
@@ -39,10 +40,7 @@ function PostsGrid() {
       <h2 className="section-title">Latest Posts</h2>
       <div className="posts-grid">
         {posts.map((post) => (
-          <div key={post.id} className="post-card">
-            <h3 className="post-title">{post.title}</h3>
-            <p className="post-excerpt">{post.body}</p>
-          </div>
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
     </>
