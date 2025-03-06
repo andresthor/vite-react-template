@@ -16,8 +16,7 @@ export default function PostCard({ post, user }: PostCardProps) {
         <p className="post-card-excerpt">{excerpt}</p>
       </div>
       <div className="post-card-footer">
-        <Link to={`/users/${post.userId}`} className="post-author">
-          <span className="post-author-name">{user?.name || 'unknown'}</span>
+        <Link to={`/user/${post.userId}`} className="post-author">
           <span className="post-author-name">{user?.name || 'Unknown Author'}</span>
         </Link>
       </div>
