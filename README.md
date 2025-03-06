@@ -64,3 +64,9 @@ export const routes: RouteObject[] = [
 The template included very little styling, and instead of using a library (since this is a small project) we can just copy in some basic `css variables` and start minimally styling the classes we have already created.
 
 We can then style as we go and do an overhaul when we are closer to finished.
+
+### Fetch data
+
+- Let's create the first fetcher, `fetchPosts`, using `axios` and place it in `api/fetchers.ts`.
+- We'll call the fetcher in the body of the `<PostLists />` component, using `tanstack-query`.
+- We confirm data is being fetched via `console.log`. Everything seems to be okay!
